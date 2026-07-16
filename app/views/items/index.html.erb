@@ -1,0 +1,14 @@
+<h1>Card Bards</h1>
+
+<h1>Current Items</h1>
+
+<div id="products">
+  <% @items.each do |item| %>
+    <div>
+      <a href="/item/<%= item.id %>">
+        <p>*<%= item.name %></p>
+        </a>
+        <p>-Price: <%= item.price %></p>
+    </div>
+  <% end %>
+</div>
