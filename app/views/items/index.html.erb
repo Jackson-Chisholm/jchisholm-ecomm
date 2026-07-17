@@ -2,10 +2,36 @@
 
 <h1>Current Items</h1>
 
+<div id="franchise filter">
+<%= form_with url: items_path, method: :get do |form| %>
+  <% @franchises.each do |franchise| %>
+      <%= form.radio_button :franchise, franchise %>
+      <%= form.label :franchise, franchise, value: franchise %><br>
+    <% end %>
+  <%= form.submit "Filter" %>
+<% end %>
+
+<%= form_with url: items_path, method: :get do |form| %>
+  <%= form.label :query, "Search:" %>
+  <%= form.search_field :query %>
+  <%= form.checkbox :limit_to_franchise %>
+  <%= form.label :limit_to_franchise, "Search with a category?" %>
+  <%= form.label :set %>
+  <%= form.select :set,
+                  @franchises,
+                  { prompt: "Select a franchise" } %>
+  <%= form.submit "Search" %>
+<% end %>
+</div>
+
+<div style="font-size: 2rem;">
+  <%= paginate @items %>
+</div>
+
 <div id="products">
   <% @items.each do |item| %>
     <div>
-      <a href="/item/<%= item.id %>">
+      <a href="/items/<%= item.id %>">
         <p>*<%= item.name %></p>
         </a>
         <p>-Price: <%= item.price %></p>
