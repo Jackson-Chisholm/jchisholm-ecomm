@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get "items/index"
   get "items/show"
+
+  post "/cart/add", to: "items#add_to_cart", as: :add_to_cart
+  get "/cart", to: "items#cart", as: :cart
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

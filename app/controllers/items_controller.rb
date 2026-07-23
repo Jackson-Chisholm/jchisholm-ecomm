@@ -24,4 +24,15 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def add_to_cart
+    session[:cart] ||= []
+    session[:cart] << params[:item_id].to_i
+
+    redirect_back(fallback_location: items_path)
+  end
+
+  def cart
+    @items = Item.where(id: session[:cart] || [])
+  end
 end
