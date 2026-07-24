@@ -26,13 +26,45 @@ class ItemsController < ApplicationController
   end
 
   def add_to_cart
-    session[:cart] ||= []
-    session[:cart] << params[:item_id].to_i
+    session[:cart] = {} unless session[:cart].is_a?(Hash)
 
-    redirect_back(fallback_location: items_path)
+  item_id = params[:item_id].to_s
+
+  session[:cart][item_id] ||= 0
+  session[:cart][item_id] += 1
+
+  redirect_back(fallback_location: items_path)
   end
 
   def cart
-    @items = Item.where(id: session[:cart] || [])
+    @cart = session[:cart] || {}
+
+    @items = Item.where(id: @cart.keys)
+  end
+
+  def increase_quantity
+    item_id = params[:item_id].to_s
+
+    if session[:cart]&.key?(item_id)
+      session[:cart][item_id] += 1
+    end
+
+    redirect_to cart_path
+  end
+  def decrease_quantity
+    item_id = params[:item_id].to_s
+
+    if session[:cart]&.key?(item_id)
+      session[:cart][item_id] -= 1
+
+      session[:cart].delete(item_id) if session[:cart][item_id] <= 0
+    end
+
+    redirect_to cart_path
+  end
+  def remove_from_cart
+    session[:cart]&.delete(params[:item_id].to_s)
+
+    redirect_to cart_path
   end
 end

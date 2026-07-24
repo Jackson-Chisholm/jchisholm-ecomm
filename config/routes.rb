@@ -4,6 +4,18 @@ Rails.application.routes.draw do
 
   post "/cart/add", to: "items#add_to_cart", as: :add_to_cart
   get "/cart", to: "items#cart", as: :cart
+
+  patch "/cart/increase/:item_id",
+      to: "items#increase_quantity",
+      as: :increase_quantity
+
+  patch "/cart/decrease/:item_id",
+      to: "items#decrease_quantity",
+      as: :decrease_quantity
+
+  delete "/cart/remove/:item_id",
+       to: "items#remove_from_cart",
+       as: :remove_from_cart
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

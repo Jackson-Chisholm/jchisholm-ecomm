@@ -1,4 +1,9 @@
 <h1><%= @item.name %></h1>
+<% if @item.avatar.attached? %>
+      <%= image_tag url_for(@item.avatar), alt: "item Avatar"%>
+    <% else %>
+      <p>No Image Attached</p>
+    <% end %>
 <h2><%= @item.franchise %></h2>
 <h2><%= @item.price %></h2>
 <p><%= @item.description %></p>

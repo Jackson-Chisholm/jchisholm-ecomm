@@ -1,9 +1,18 @@
 <h1>Your Cart</h1>
 
 <% @items.each do |item| %>
-  <p>
-    <%= item.name %> -
-    <%= number_to_currency(item.price) %>
-  </p>
+
+  <h3><%= item.name %></h3>
+
+  <%= button_to "-", decrease_quantity_path(item), method: :patch %>
+
+  <%= @cart[item.id.to_s] %>
+
+  <%= button_to "+", increase_quantity_path(item), method: :patch %>
+
+  <%= button_to "Remove",
+      remove_from_cart_path(item),
+      method: :delete %>
+
 <% end %>
 <h4><a href = "/items/">Back</a></h4>
