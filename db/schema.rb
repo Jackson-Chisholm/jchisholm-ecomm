@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_24_045658) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_28_053003) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.integer "author_id"
     t.string "author_type"
@@ -65,6 +65,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_045658) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.string "password"
+    t.integer "phone"
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "description"
@@ -72,6 +82,21 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_045658) do
     t.string "name"
     t.float "price"
     t.integer "stock"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "order_date"
+    t.string "status"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "float"
+    t.string "name"
+    t.string "tax"
     t.datetime "updated_at", null: false
   end
 
