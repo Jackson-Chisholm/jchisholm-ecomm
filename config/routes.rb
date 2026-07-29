@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "orders/index"
+  get "orders/new"
+  get "customers/index"
+  get "customers/new"
   get "items/index"
   get "items/show"
 
@@ -29,6 +33,8 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   root "items#index"
   resources :items
+  resources :customers
+  resources :orders
 
   # Defines the root path route ("/")
   # root "posts#index"
