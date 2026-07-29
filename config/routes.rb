@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   get "orders/index"
   get "orders/new"
   get "customers/index"
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   resources :items
   resources :customers
   resources :orders
+  resources :provinces
 
   # Defines the root path route ("/")
   # root "posts#index"
