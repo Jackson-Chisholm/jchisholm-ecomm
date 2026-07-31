@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   root "items#index"
   resources :items
-  resources :customers
   resources :orders
   resources :provinces
 

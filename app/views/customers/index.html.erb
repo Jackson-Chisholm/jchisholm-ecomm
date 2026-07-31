@@ -1,4 +1,28 @@
-<div>
-  <h1 class="font-bold text-4xl">Customers#index</h1>
-  <p>Find me in app/views/customers/index.html.erb</p>
-</div>
+<h1>Create Account</h1>
+<%= form_with model: @customer do |form| %>
+  <%= form.label :name, "Name:" %>
+  <%= form.search_field :name %>
+  <%= form.label :email, "Email:" %>
+  <%= form.search_field :email %>
+  <%= form.label :address, "Address:" %>
+  <%= form.search_field :address %>
+  <%= form.label :set %>
+  <%= form.select :set,
+                  @provinces,
+                  { prompt: "Province" } %>
+  <%= form.label :pass, "Password:" %>
+  <%= form.search_field :pass %>
+  <%= form.label :confirm, "Confirm Password:" %>
+  <%= form.search_field :confirm %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<h1>Log In</h1>
+<%= form_with url: items_path, method: :get do |form| %>
+  <%= form.label :name, "Name:" %>
+  <%= form.search_field :name %>
+  <%= form.label :pass, "Password:" %>
+  <%= form.search_field :pass %>
+  <%= form.submit "Search" %>
+<% end %>
+
