@@ -2,7 +2,7 @@
 
 <% @items.each do |item| %>
 
-  <h3><%= item.name %></h3>
+  <h2><%= item.name %></h2>
 
   <%= button_to "-", decrease_quantity_path(item), method: :patch %>
 
@@ -15,4 +15,5 @@
       method: :delete %>
 
 <% end %>
+<h3><a hreg = "/orders/new">Checkout</a></h3>
 <h4><a href = "/items/">Back</a></h4>
