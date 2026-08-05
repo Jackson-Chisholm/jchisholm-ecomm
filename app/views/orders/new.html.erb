@@ -9,6 +9,15 @@
 <% itemPrice = itemPrice.round(2)%>
 <h2>Items</h2>
 <p><%= itemList%>
-<h2>Sub Total</h2>
-<p><%= itemPrice%></p>
+<h2>Location</h2>
+<p>Address: <%= current_customer.address%></p>
+<p>Province: <%= current_customer.province.name%></p>
+<h2>Total</h2>
+<p>Sub Total: <%= itemPrice%></p>
+<% taxes = itemPrice * current_customer.province.tax%>
+<% taxes = taxes.round(2)%>
+<p>Tax: <%= taxes%></p>
+<% final = taxes + itemPrice%>
+<% final = final.round(2)%>
+<p>Grand Total: <%= final%></p>
 
