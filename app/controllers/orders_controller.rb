@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_customer!, only: [:new]
   def index
   end
 
   def new
-    before_action :authenticate_customer!
 
     @order = Order.new
     @cart = session[:cart] || {}

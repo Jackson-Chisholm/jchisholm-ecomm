@@ -1,4 +1,14 @@
-<div>
-  <h1 class="font-bold text-4xl">Orders#new</h1>
-  <p>Find me in app/views/orders/new.html.erb</p>
-</div>
+<h1>Order Summary</h1>
+<% itemList = ""
+  itemPrice = 0.00
+%>
+<% @items.each do |item| %>
+  <% itemList << item.name + ": " + item.price.to_s + ", "%>
+  <% itemPrice = itemPrice + item.price%>
+<% end %>
+<% itemPrice = itemPrice.round(2)%>
+<h2>Items</h2>
+<p><%= itemList%>
+<h2>Sub Total</h2>
+<p><%= itemPrice%></p>
+
