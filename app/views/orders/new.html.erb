@@ -21,3 +21,12 @@
 <% final = final.round(2)%>
 <p>Grand Total: <%= final%></p>
 
+<%= form_with model: @order do |form| %>
+  <%= form.hidden_field :items, value: itemList%>
+  <%= form.hidden_field :order_total, value: final%>
+  <%= form.hidden_field :status, value: "Pending"%>
+  <%= form.hidden_field :customer_id, value: current_customer.id%>
+  <%= form.submit "Complete Checkout" %>
+<% end %>
+
+
