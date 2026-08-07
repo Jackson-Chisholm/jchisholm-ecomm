@@ -10,6 +10,8 @@
     method: :delete,
     form: { data: { turbo: true } } %>
 
+  <p><a href = "/customers/index">Order History</a></p>
+
 <% else %>
 
   <%= link_to "Login", new_customer_session_path %>

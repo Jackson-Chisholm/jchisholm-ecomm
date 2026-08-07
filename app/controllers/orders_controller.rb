@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_customer!, only: [:new]
+  before_action :authenticate_customer!, only: [:new, :create]
   def index
   end
 
@@ -16,6 +16,8 @@ class OrdersController < ApplicationController
       session[:cart] = {}
       redirect_to root_path
     else
+      @cart = session[:cart] || {}
+      @items = Item.where(id: @cart.keys)
       render :new, status: :unprocessable_entity
     end
   end

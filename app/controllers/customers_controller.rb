@@ -1,6 +1,8 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_customer!
   def index
-    @provinces = Province.all
+    @customer = current_customer
+    @orders = Order.where(customer_id: current_customer.id)
   end
 
   def new
