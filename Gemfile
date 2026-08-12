@@ -34,6 +34,9 @@ gem "sassc"
 
 gem "tailwindcss-rails", "4.6.0"
 gem "tailwindcss-ruby", "4.3.0"
+
+gem 'rubocop'
+gem 'rubocop-rails'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
