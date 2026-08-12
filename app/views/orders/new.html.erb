@@ -1,4 +1,32 @@
-<div>
-  <h1 class="font-bold text-4xl">Orders#new</h1>
-  <p>Find me in app/views/orders/new.html.erb</p>
-</div>
+<h1>Order Summary</h1>
+<% itemList = ""
+  itemPrice = 0.00
+%>
+<% @items.each do |item| %>
+  <% itemList << item.name + ": " + item.price.to_s + ", "%>
+  <% itemPrice = itemPrice + item.price%>
+<% end %>
+<% itemPrice = itemPrice.round(2)%>
+<h2>Items</h2>
+<p><%= itemList%>
+<h2>Location</h2>
+<p>Address: <%= current_customer.address%></p>
+<p>Province: <%= current_customer.province.name%></p>
+<h2>Total</h2>
+<p>Sub Total: <%= itemPrice%></p>
+<% taxes = itemPrice * current_customer.province.tax%>
+<% taxes = taxes.round(2)%>
+<p>Tax: <%= taxes%></p>
+<% final = taxes + itemPrice%>
+<% final = final.round(2)%>
+<p>Grand Total: <%= final%></p>
+
+<%= form_with model: @order do |form| %>
+  <%= form.hidden_field :items, value: itemList%>
+  <%= form.hidden_field :order_total, value: final%>
+  <%= form.hidden_field :status, value: "Pending"%>
+  <%= form.hidden_field :customer_id, value: current_customer.id%>
+  <%= form.submit "Complete Checkout" %>
+<% end %>
+
+

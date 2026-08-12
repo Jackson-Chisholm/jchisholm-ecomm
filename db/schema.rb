@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_31_043652) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_07_022801) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.integer "author_id"
     t.string "author_type"
@@ -71,7 +71,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_31_043652) do
     t.string "email"
     t.string "encrypted_password", default: "", null: false
     t.string "name"
-    t.integer "phone"
     t.integer "province_id", null: false
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
@@ -96,7 +95,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_31_043652) do
     t.datetime "created_at", null: false
     t.integer "customer_id", null: false
     t.string "items"
-    t.date "order_date"
+    t.float "order_total"
     t.string "status"
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"

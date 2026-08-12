@@ -1,28 +1,12 @@
-<h1>Create Account</h1>
-<%= form_with model: @customer do |form| %>
-  <%= form.label :name, "Name:" %>
-  <%= form.search_field :name %>
-  <%= form.label :email, "Email:" %>
-  <%= form.search_field :email %>
-  <%= form.label :address, "Address:" %>
-  <%= form.search_field :address %>
-  <%= form.label :set %>
-  <%= form.select :set,
-                  @provinces,
-                  { prompt: "Province" } %>
-  <%= form.label :pass, "Password:" %>
-  <%= form.search_field :pass %>
-  <%= form.label :confirm, "Confirm Password:" %>
-  <%= form.search_field :confirm %>
-  <%= form.submit "Search" %>
+<h1><%= @customer.name%> Order History</h1>
+<% @orders.each do |order| %>
+  <h2>Items</h2>
+  <p><%= order.items%></p>
+  <h2>Total</h2>
+  <p><%= order.order_total%></p>
+  <p>Status: <%= order.status%></p>
 <% end %>
 
-<h1>Log In</h1>
-<%= form_with url: items_path, method: :get do |form| %>
-  <%= form.label :name, "Name:" %>
-  <%= form.search_field :name %>
-  <%= form.label :pass, "Password:" %>
-  <%= form.search_field :pass %>
-  <%= form.submit "Search" %>
-<% end %>
+<h4><a href = "/items/">Back</a></h4>
+
 
