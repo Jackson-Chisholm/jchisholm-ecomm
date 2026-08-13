@@ -24,7 +24,7 @@ gem "kaminari"
 gem "faker"
 
 # Plus integrations with:
-gem 'devise', ">= 3.2", "< 5"
+gem 'devise', ">= 3.2", "< 6"
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
