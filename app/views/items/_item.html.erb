@@ -1,0 +1,11 @@
+<div>
+    <% if item.avatar.attached? %>
+      <%= image_tag url_for(item.avatar), alt: "item Avatar"%>
+    <% else %>
+      <p>No Image Attached</p>
+    <% end %>
+      <a href="/items/<%= item.id %>">
+        <p>*<%= item.name %></p>
+        </a>
+        <p>-Price: <%= item.price %></p>
+</div>
