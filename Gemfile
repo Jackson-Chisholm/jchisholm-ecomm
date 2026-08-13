@@ -37,6 +37,8 @@ gem "tailwindcss-ruby", "4.3.0"
 
 gem 'rubocop'
 gem 'rubocop-rails'
+
+gem "google-cloud-storage", require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
