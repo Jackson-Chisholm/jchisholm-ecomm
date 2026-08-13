@@ -11,12 +11,12 @@ class ItemsController < ApplicationController
       term: "%#{params[:query]}%").page(params[:page]).per(5)
     end
 
-  elsif params[:franchise].present?
-    @items = Item.where(franchise: params[:franchise]).page(params[:page]).per(5)
+    elsif params[:franchise].present?
+      @items = Item.where(franchise: params[:franchise]).page(params[:page]).per(5)
 
-  else
-    @items = Item.all.page(params[:page]).per(5)
-  end
+    else
+      @items = Item.all.page(params[:page]).per(5)
+    end
 
   @franchises = Item.distinct.pluck(:franchise)
   end
