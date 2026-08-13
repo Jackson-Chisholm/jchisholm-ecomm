@@ -33,7 +33,7 @@ gem 'dartsass-rails'
 gem "sassc"
 
 gem "tailwindcss-rails", "4.6.0"
-gem "tailwindcss-ruby", "4.3.0"
+gem "tailwindcss-ruby", "4.3.3"
 
 gem 'rubocop'
 gem 'rubocop-rails'
