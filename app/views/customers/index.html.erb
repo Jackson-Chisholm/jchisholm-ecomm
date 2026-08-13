@@ -1,11 +1,5 @@
 <h1><%= @customer.name%> Order History</h1>
-<% @orders.each do |order| %>
-  <h2>Items</h2>
-  <p><%= order.items%></p>
-  <h2>Total</h2>
-  <p><%= order.order_total%></p>
-  <p>Status: <%= order.status%></p>
-<% end %>
+<%= render partial: "customers/customer", collection: @orders, as: :order %>
 
 <h4><a href = "/items/">Back</a></h4>
 
