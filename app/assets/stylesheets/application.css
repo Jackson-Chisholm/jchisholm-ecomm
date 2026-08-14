@@ -51,3 +51,13 @@
  .item:hover {
   background-color: #FFF;
  }
+
+ .order {
+  background-color: #DEB887;
+  width: 250px;
+ }
+
+ #orders {
+  display: flex;
+  justify-content: space-around;
+ }
