@@ -9,6 +9,12 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- h2 {
-  color: red;
+ body {
+  background-color: #A47449;
+ }
+
+ .title {
+  display: flex;
+  justify-content: center;
+  color: #ADD8E6;
  }
