@@ -9,6 +9,112 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- h2 {
-  color: red;
+ body {
+  background-color: #A47449;
  }
+
+ .title {
+  display: flex;
+  justify-content: center;
+  color: #ADD8E6;
+ }
+
+ .user {
+  float: right;
+  background-color: #DEB887;
+ }
+
+ #search {
+  background-color: #DEB887;
+  width: 25%;
+ }
+
+ #products {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  width: 100%;
+ }
+
+ .item {
+  background-color: #DEB887;
+  width: 250px;
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 1s;
+ }
+
+ .item:hover {
+  background-color: #FFF;
+ }
+
+ .order {
+  background-color: #DEB887;
+  width: 250px;
+ }
+
+ #orders {
+  display: flex;
+  justify-content: space-around;
+ }
+
+ #details {
+  background-color: #DEB887;
+  width: 25%;
+ }
+
+ #header {
+  background-color: #FFF;
+  width: 25%;
+ }
+
+ #item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ }
+
+ #back a{
+  color: white;
+ }
+
+ #cart {
+  background-color: #DEB887;
+  width: 50%;
+ }
+
+.cart_item {
+  background-color: #FFF;
+  transition: 1s;
+}
+
+.cart_item:hover {
+  background-color: gray;
+  color: white;
+}
+
+#confirm {
+  background-color: #DEB887;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#form {
+  background-color: #FFF;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+
+#form:hover {
+  background-color: gray;
+}

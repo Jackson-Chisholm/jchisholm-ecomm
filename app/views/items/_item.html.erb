@@ -1,6 +1,6 @@
-<div>
+<div class="item">
     <% if item.avatar.attached? %>
-      <%= image_tag url_for(item.avatar), alt: "item Avatar"%>
+      <%= image_tag url_for(item.avatar), size: "150x200",  alt: "item Avatar"%>
     <% else %>
       <p>No Image Attached</p>
     <% end %>

@@ -1,6 +1,9 @@
-<h1><%= @customer.name%> Order History</h1>
+<h1 class="title">Card Bards</h1>
+<h2><%= @customer.name%>'s Order History</h2>
+<div id="orders">
 <%= render partial: "customers/customer", collection: @orders, as: :order %>
+</div>
 
-<h4><a href = "/items/">Back</a></h4>
+<h3 id="back"><a href = "/items/">Back</a></h3>
 
 
