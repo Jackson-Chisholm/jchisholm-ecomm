@@ -2,7 +2,8 @@
 <h1 class="title">Card Bards</h1>
 
 <% if customer_signed_in? %>
-  Welcome, <%= current_customer.name %>
+  <div class="user">
+  <h2>Welcome, <%= current_customer.name %></h2>
 
   <%= link_to "My Account", edit_customer_registration_path %>
 
@@ -12,18 +13,20 @@
     form: { data: { turbo: true } } %>
 
   <p><a href = "/customers/index">Order History</a></p>
+  </div>
 
 <% else %>
-
+  <div class="user">
   <%= link_to "Login", new_customer_session_path %>
 
   <%= link_to "Register", new_customer_registration_path %>
+  </div>
 
 <% end %>
 
-<h1>Current Items</h1>
+<h2>Current Items</h2>
 
-<div id="franchise filter">
+<div id="search">
 <%= form_with url: items_path, method: :get do |form| %>
   <% @franchises.each do |franchise| %>
       <%= form.radio_button :franchise, franchise %>

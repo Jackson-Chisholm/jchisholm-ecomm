@@ -18,3 +18,13 @@
   justify-content: center;
   color: #ADD8E6;
  }
+
+ .user {
+  float: right;
+  background-color: #DEB887;
+ }
+
+ #search {
+  background-color: #DEB887;
+  width: 25%;
+ }
