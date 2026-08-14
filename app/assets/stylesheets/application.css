@@ -61,3 +61,23 @@
   display: flex;
   justify-content: space-around;
  }
+
+ #details {
+  background-color: #DEB887;
+  width: 25%;
+ }
+
+ #header {
+  background-color: #FFF;
+  width: 25%;
+ }
+
+ #item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ }
+
+ #back a{
+  color: white;
+ }
