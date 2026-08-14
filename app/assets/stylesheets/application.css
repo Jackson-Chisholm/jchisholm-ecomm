@@ -81,3 +81,18 @@
  #back a{
   color: white;
  }
+
+ #cart {
+  background-color: #DEB887;
+  width: 50%;
+ }
+
+.cart_item {
+  background-color: #FFF;
+  transition: 1s;
+}
+
+.cart_item:hover {
+  background-color: gray;
+  color: white;
+}

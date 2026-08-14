@@ -1,19 +1,8 @@
+<h1 class="title">Card Bards</h1>
+<div id="cart">
 <h1>Your Cart</h1>
 
-<% @items.each do |item| %>
-
-  <h2><%= item.name %></h2>
-
-  <%= button_to "-", decrease_quantity_path(item), method: :patch %>
-
-  <%= @cart[item.id.to_s] %>
-
-  <%= button_to "+", increase_quantity_path(item), method: :patch %>
-
-  <%= button_to "Remove",
-      remove_from_cart_path(item),
-      method: :delete %>
-
-<% end %>
+<%= render partial: "items/cart", collection: @items, as: :item %>
 <h3><a href = "/orders/new">Checkout</a></h3>
-<h4><a href = "/items/">Back</a></h4>
+</div>
+<h4 id="back"><a href = "/items/">Back</a></h4>
