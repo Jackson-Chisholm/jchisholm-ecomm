@@ -96,3 +96,25 @@
   background-color: gray;
   color: white;
 }
+
+#confirm {
+  background-color: #DEB887;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#form {
+  background-color: #FFF;
+  width: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+
+#form:hover {
+  background-color: gray;
+}

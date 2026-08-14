@@ -1,3 +1,4 @@
+<h1 class="title">Card Bards</h1>
 <h1>Order Summary</h1>
 <% itemList = ""
   itemPrice = 0.00
@@ -7,6 +8,7 @@
   <% itemPrice = itemPrice + item.price%>
 <% end %>
 <% itemPrice = itemPrice.round(2)%>
+<div id="confirm">
 <h2>Items</h2>
 <p><%= itemList%>
 <h2>Location</h2>
@@ -20,7 +22,9 @@
 <% final = taxes + itemPrice%>
 <% final = final.round(2)%>
 <p>Grand Total: <%= final%></p>
+</div>
 
+<div id="form">
 <%= form_with model: @order do |form| %>
   <%= form.hidden_field :items, value: itemList%>
   <%= form.hidden_field :order_total, value: final%>
@@ -28,5 +32,7 @@
   <%= form.hidden_field :customer_id, value: current_customer.id%>
   <%= form.submit "Complete Checkout" %>
 <% end %>
+</div>
+<h3 id="back"><a href = "/items/">Back</a></h3>
 
 
