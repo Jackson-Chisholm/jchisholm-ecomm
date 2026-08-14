@@ -24,9 +24,8 @@
 
 <% end %>
 
-<h2>Current Items</h2>
-
 <div id="search">
+  <h2>Search/Filter</h2>
 <%= form_with url: items_path, method: :get do |form| %>
   <% @franchises.each do |franchise| %>
       <%= form.radio_button :franchise, franchise %>
@@ -49,6 +48,8 @@
 </div>
 
 <h2><a href = "/cart">Cart</a></h2>
+
+<h2>Current Items</h2>
 
 <div style="font-size: 2rem;">
   <%= paginate @items %>

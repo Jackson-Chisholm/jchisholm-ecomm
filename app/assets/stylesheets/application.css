@@ -28,3 +28,26 @@
   background-color: #DEB887;
   width: 25%;
  }
+
+ #products {
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  width: 100%;
+ }
+
+ .item {
+  background-color: #DEB887;
+  width: 250px;
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 1s;
+ }
+
+ .item:hover {
+  background-color: #FFF;
+ }
